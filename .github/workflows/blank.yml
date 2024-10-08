@@ -39,6 +39,8 @@ jobs:
           
       - name: Push changes
         run: |
+          git config user.email "Github Actions"
+          git config user.name actions@github.com
           gh auth setup-git
           git add --all
           git commit -m "Automated commit from GitHub Actions" || echo "No changes to commit"
