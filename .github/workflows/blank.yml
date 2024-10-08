@@ -1,7 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
+  
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -35,8 +39,8 @@ jobs:
           
       - name: Push changes
         run: |
-          git config user.name "huakim"
-          git config user.email "fijik19@gmail.com"
+          git config user.name "Github Actions"
+          git config user.email "actions@github.com"
           git add --all
           git commit -m "Automated commit from GitHub Actions" || echo "No changes to commit"
           git push
